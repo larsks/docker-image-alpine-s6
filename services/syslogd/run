@@ -1,4 +1,6 @@
 #!/bin/sh
 
-exec syslogd -n -C
+: ${SYSLOG_BUFFER_SIZE:=8192}
+
+exec syslogd -n -C$SYSLOG_BUFFER_SIZE
 
